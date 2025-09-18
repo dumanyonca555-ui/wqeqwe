@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test JS Redirect</title>
+</head>
+<body>
+    <h1>Test JS Redirect</h1>
+    <button onclick="testRedirect(1)">Test Redirect to Chapter 1</button>
+    <button onclick="testRedirect(2)">Test Redirect to Chapter 2</button>
+    
+    <script>
+        function testRedirect(chapterId) {
+            console.log("Redirecting to chapter:", chapterId);
+            window.location.href = 'chapter-play.php?chapter=' + chapterId;
+        }
+    </script>
+</body>
+</html>

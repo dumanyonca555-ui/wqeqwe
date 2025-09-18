@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Debug Test</title>
+</head>
+<body>
+    <h1>JavaScript Debug Test</h1>
+    <button id="testBtn1">Test Chapter 1</button>
+    <button id="testBtn2">Test Chapter 2</button>
+    
+    <script>
+        // Global error handler
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error('Global error:', message, 'at', source, ':', lineno, ':', colno);
+            console.error('Error object:', error);
+            alert('Error: ' + message);
+            return false;
+        };
+        
+        // Test function
+        function testRedirect(chapterId) {
+            console.log("Test redirect function called with ID:", chapterId);
+            alert("Redirecting to chapter " + chapterId);
+            window.location.href = 'chapter-play.php?chapter=' + chapterId;
+        }
+        
+        // Add event listeners
+        document.getElementById('testBtn1').addEventListener('click', function() {
+            testRedirect(1);
+        });
+        
+        document.getElementById('testBtn2').addEventListener('click', function() {
+            testRedirect(2);
+        });
+        
+        console.log("Debug page loaded");
+    </script>
+</body>
+</html>
